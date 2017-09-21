@@ -11,9 +11,10 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 627220E7 && \
         apt-get update --fix-missing
 
 # install python and scrapy
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git python python-pip python-dev build-essential libxml2-dev libxslt-dev libffi-dev libssl-dev libmysqlclient-dev libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev mailutils ssmtp && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git python python-pip python-dev build-essential libxml2-dev libxslt-dev libffi-dev libssl-dev libmysqlclient-dev libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev mailutils ssmtp php5 php5-mysql && \
         apt-get install -y --reinstall cron && \
         pip install --upgrade pip && pip install --upgrade virtualenv && \ 
+        pip install imagehash && \
         pip install lxml && pip install pyopenssl && pip install Scrapy && pip install --upgrade scrapy && \
         pip install --upgrade twisted && \
         pip install MySQL-python && \
@@ -28,7 +29,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git python python-pip pyth
         apt-get install -y opencc && pip install opencc && \
         pip install future && \
         pip install jieba && \
-        pip install git+https://github.com/seomoz/simhash-py.git && \
-
-        pip install numpy && pip install imagehash && \
-        apt-get install php5 && apt-get install php5-mysql
+        pip install git+https://github.com/seomoz/simhash-py.git
