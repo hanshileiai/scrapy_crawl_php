@@ -30,5 +30,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git python python-pip pyth
         pip install jieba && \
         pip install git+https://github.com/seomoz/simhash-py.git && \
 
-        pip install imagehash && \
+        pip install numpy && pip install imagehash && \
         apt-get install php5 && apt-get install php5-mysql
